@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msparts
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: msparts
+  template:
+    metadata:
+      labels:
+        app: msparts
+    spec:
+      containers:
+      - name: msparts
+        image: ghofrane694/msparts:latest
+        ports:
+        - containerPort: 5003
